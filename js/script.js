@@ -1,5 +1,32 @@
-// let answer = confirm("Are you here?");
-// console.log(answer);
+let money,
+    time;
 
-let answer = prompt("Есть ли вам 18", "Да");
-console.log(typeof(answer));
+money = prompt('Ваш бюджет на месяц?', 'Введите число');
+time = prompt('Введите дату в формате YYYY-MM-DD', 'YYYY-MM-DD');
+
+let appData = {
+    budget: money,
+    timeData: time,
+    expenses: {
+        
+    },
+    optionalExpenses : { 
+
+    },
+    income: [],
+    savings : false
+}
+
+let oneQuestion,
+    secondQuestion;
+
+oneQuestion = prompt('Введите обязательную статью расходов в этом месяце', 'Продукты');
+secondQuestion = prompt('Во сколько обойдется?', '10 000');
+
+appData.expenses = {oneQuestion : secondQuestion};
+console.log(appData.budget);
+console.log(appData.expenses.oneQuestion);
+let answer;
+answer = appData.budget - appData.expenses.oneQuestion;
+console.log(typeof(appData.budget));
+//alert('Ваш бюджет:' + ((appData.budget - appData.expenses.oneQuestion) / 30));
